@@ -1,0 +1,48 @@
+{%load static%}
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Lol Stats</title>
+  <meta name="description" content="A simple HTML5 Template for new projects.">
+  <meta name="author" content="SitePoint">
+
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="static/css/style.css">
+
+</head>
+{% include 'navbar.html' %}
+<body>
+    
+    <section class="search-player">
+        <img src="/static/images/iconlol.jpg" class="img" alt="logo">
+        <h1 class="title"> Find your Stats</h1>
+        <div class="container">
+            <div class="player-form">
+                <form action="player">
+                    <div class="form-field">
+                        <input id="search" type="text" class="input-text" name="search" placeholder=" ">
+                        <label for="search" class="label">Player</label>
+                        
+                    </div>
+                    <div class="form-field">
+                        <input class="submit-btn" type="submit" value="submit" >
+                    </div>
+                </form>
+            </div>
+        </div>
+        <h1>
+            {{matchlist}}
+        </h1>
+    </section>
+    
+  
+  <script src="js/scripts.js"></script>
+</body>
+</html>

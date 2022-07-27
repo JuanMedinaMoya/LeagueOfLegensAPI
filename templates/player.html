@@ -1,0 +1,48 @@
+{%load static%}
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Lol Stats</title>
+  <meta name="description" content="A simple HTML5 Template for new projects.">
+  <meta name="author" content="SitePoint">
+
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="static/css/style.css">
+
+</head>
+
+<body>
+    <section class="search-player">
+        <img src="{{icon}}" class="img" alt="logo" style=" border-radius: 50%;">
+        
+        <h1 class="title"> {{summoner_name}}</h1>
+        
+        <div class="container">
+            <img src="{{emblem}}" class="img" alt="logo" style=" border-radius: 50%;">
+            <h3>
+                 Rank: {{tier}} {{rank}}
+            </h3>
+            <h4>
+                LP: {{lp}}
+            </h4>
+            
+            <br>
+            Wins: {{wins}}
+            Losses: {{losses}}
+        </div>
+        <h1>
+            
+        </h1>
+    </section>
+    
+  
+  <script src="js/scripts.js"></script>
+</body>
+</html>

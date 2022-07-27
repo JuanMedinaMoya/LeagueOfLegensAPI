@@ -1,0 +1,46 @@
+{%load static%}
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Lol Stats</title>
+  <meta name="description" content="A simple HTML5 Template for new projects.">
+  <meta name="author" content="SitePoint">
+
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="static/css/style.css">
+
+</head>
+
+
+<body>
+
+<table>
+    <thead>
+        <tr>
+            <th>User</th>
+            <th>Friend</th>
+        </tr>
+    </thead>
+    <tbody>
+        {%for friend in friends%}
+        <tr>
+            <td>
+                <a href="{% url 'player' friend.user%}">{{friend.user}}</a>
+                </td>
+            <td>{{friend.friend}}</td>
+        </tr>
+         {%endfor%}
+    </tbody>
+</table>
+   
+
+  <script src="js/scripts.js"></script>
+</body>
+</html>

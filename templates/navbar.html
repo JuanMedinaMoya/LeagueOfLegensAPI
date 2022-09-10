@@ -26,9 +26,13 @@
     </a>
     {% if user.is_authenticated %}
     <li class="dropdown">
-        <a href="javascript:void(0)" class="dropbtn">Profile</a>
+        <a href="javascript:void(0)" class="dropbtn">{{user}}</a>
         <div class="dropdown-content">
-            <a href="#">My Profile</a>
+            {% if request.session.lolusername is not None %}
+            <a href="/player/{{request.session.lolusername}}">My Profile</a>
+            {% else %}
+            <a href="#">Set your LOL Username</a>
+            {% endif%}   
             <a href="#">Friends</a>
             <a href="/accounts/logout" style="color:rgb(255, 0, 0) ;">Logout</a>
         </div>

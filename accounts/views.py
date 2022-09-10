@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, auth
-from django.contrib import messages
+from django.contrib import messages, sessions
 
 from LeagueOfLegends.models import User as Usuario
 
@@ -39,10 +39,22 @@ def login(request):
         password = request.POST['password']
         
         user = auth.authenticate(username=username, password=password)
-
+        
         if user is not None:
             auth.login(request,user)
-            return redirect('/')
+            #request.session['user'] = user.username
+
+            usuario = Usuario.objects.filter(user=user)
+            print(usuario)
+            if not usuario:
+                usuario = None
+            else:
+                usuario = usuario[0]
+                request.session['lolusername'] = usuario.lolusername
+                request.session.modified = True
+            
+
+            return  redirect('/')
         else:
             messages.info(request, 'Invalid login')
             return redirect('login')

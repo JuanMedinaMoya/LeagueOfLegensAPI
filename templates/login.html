@@ -14,7 +14,7 @@
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="static/css/style.css">
+  <link rel="stylesheet" href="/static/css/style.css">
 
 </head>
 
@@ -25,7 +25,8 @@
         <h1 class="title"> Login</h1>
         <div class="container">
             <div class="player-form">
-                <form action="player">
+                <form action="login" method="post">
+                    {% csrf_token %}
                     <div class="form-field">
                         <input id="username" type="text" class="input-text" name="username" placeholder=" ">
                         <label for="username" class="label">Username</label>
@@ -38,6 +39,11 @@
                     </div>
                     <div class="form-field">
                         <input class="submit-btn" type="submit" value="submit" >
+                    </div>
+                    <div class="form-field">
+                        {% for message in messages %}
+                        <h3 style="color:brown"> {{message}}</h3>
+                        {% endfor%}
                     </div>
                 </form>
             </div>
